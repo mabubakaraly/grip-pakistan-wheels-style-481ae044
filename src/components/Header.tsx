@@ -1,10 +1,13 @@
 
 import React from 'react';
 import { Search, Menu, Phone, Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
-    <header className="bg-gray-900 border-b border-gray-800">
+    <header className="bg-gray-900 border-b border-gray-800 fixed w-full top-0 z-50">
       <div className="container mx-auto px-4">
         {/* Top bar */}
         <div className="flex items-center justify-between py-2 text-sm border-b border-gray-800">
@@ -26,7 +29,10 @@ const Header = () => {
         {/* Main header */}
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div 
+            className="flex items-center space-x-3 cursor-pointer" 
+            onClick={() => navigate('/')}
+          >
             <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl flex items-center justify-center">
               <span className="text-white font-bold text-xl">MT</span>
             </div>
@@ -38,11 +44,36 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#" className="text-orange-400 font-medium border-b-2 border-orange-400 pb-1">Home</a>
-            <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors">About</a>
-            <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors">Products</a>
-            <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors">Brands</a>
-            <a href="#" className="text-gray-300 hover:text-orange-400 transition-colors">Contact</a>
+            <button 
+              onClick={() => navigate('/')}
+              className="text-orange-400 font-medium border-b-2 border-orange-400 pb-1"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => navigate('/about')}
+              className="text-gray-300 hover:text-orange-400 transition-colors"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => navigate('/products')}
+              className="text-gray-300 hover:text-orange-400 transition-colors"
+            >
+              Products
+            </button>
+            <button 
+              onClick={() => navigate('/brands')}
+              className="text-gray-300 hover:text-orange-400 transition-colors"
+            >
+              Brands
+            </button>
+            <button 
+              onClick={() => navigate('/contact')}
+              className="text-gray-300 hover:text-orange-400 transition-colors"
+            >
+              Contact
+            </button>
           </nav>
 
           {/* Search and menu */}

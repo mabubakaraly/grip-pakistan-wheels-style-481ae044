@@ -30,23 +30,23 @@ const BrandShowcase = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Our Premium
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
               Brand Portfolio
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Partnering with world-renowned manufacturers to bring you the finest tyres for every application
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {brands.map((brand, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white overflow-hidden">
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border border-gray-700 bg-gray-800/50 backdrop-blur-sm overflow-hidden">
               <CardContent className="p-0">
                 {/* Brand header */}
                 <div className={`h-40 bg-gradient-to-br ${brand.color} relative overflow-hidden`}>
@@ -63,7 +63,7 @@ const BrandShowcase = () => {
 
                 {/* Content */}
                 <div className="p-6 space-y-6">
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {brand.description}
                   </p>
 
@@ -71,14 +71,14 @@ const BrandShowcase = () => {
                     {brand.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-2">
                         <Star className="h-4 w-4 text-orange-400 fill-current" />
-                        <span className="text-sm text-gray-700 font-medium">{feature}</span>
+                        <span className="text-sm text-gray-300 font-medium">{feature}</span>
                       </div>
                     ))}
                   </div>
 
                   <Button 
                     variant="outline" 
-                    className="w-full group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300"
+                    className="w-full border-gray-600 text-gray-300 hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-300"
                   >
                     Learn More
                     <ExternalLink className="ml-2 h-4 w-4" />

@@ -28,16 +28,16 @@ const CommitmentSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Excellence in Every
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
               Mile You Drive
             </span>
           </h2>
-          <p className="text-xl text-gray-600 leading-relaxed">
+          <p className="text-xl text-gray-300 leading-relaxed">
             At Malik Trading Co., we revolutionize tyre distribution through innovation, 
             reliability, and unwavering commitment to quality. From passenger vehicles to 
             heavy machinery, we deliver performance that exceeds expectations.
@@ -50,13 +50,13 @@ const CommitmentSection = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <feature.icon className="h-10 w-10 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+              <p className="text-gray-300 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-8 lg:p-12 text-center">
+        <div className="bg-gradient-to-r from-gray-900 to-gray-700 border border-gray-600 rounded-3xl p-8 lg:p-12 text-center">
           <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6">
             Ready to Experience the Difference?
           </h3>
