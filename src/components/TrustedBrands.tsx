@@ -2,87 +2,56 @@
 import React from 'react';
 
 const TrustedBrands = () => {
-  const brands = [
-    { name: "Pakistan State Oil", logo: "PSO" },
-    { name: "Pakistan Air Force", logo: "PAF" },
-    { name: "Development Company", logo: "DEV" },
-    { name: "NHA", logo: "NHA" },
-    { name: "Lucky Cement", logo: "LUCKY" },
-    { name: "Fauji Cement", logo: "FAUJI" },
-    { name: "Habib Construction", logo: "HABIB" },
-    { name: "Descon", logo: "DESCON" },
-    { name: "Al Bayrak", logo: "BAYRAK" },
-    { name: "CGGC", logo: "CGGC" }
+  const companies = [
+    { name: "Pakistan State Oil", code: "PSO", color: "bg-green-600" },
+    { name: "Pakistan Air Force", code: "PAF", color: "bg-blue-600" },
+    { name: "National Highway Authority", code: "NHA", color: "bg-orange-600" },
+    { name: "Lucky Cement", code: "LUCKY", color: "bg-red-700" },
+    { name: "Fauji Cement", code: "FAUJI", color: "bg-green-700" },
+    { name: "Habib Construction", code: "HABIB", color: "bg-amber-600" },
+    { name: "Descon Engineering", code: "DESCON", color: "bg-gray-700" },
+    { name: "Al Bayrak Group", code: "BAYRAK", color: "bg-red-600" },
+    { name: "China Gezhouba", code: "CGGC", color: "bg-yellow-600" },
+    { name: "Frontier Works", code: "FWO", color: "bg-blue-700" }
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-blue-500 text-center mb-12">
-          Trusted & Used By 100% Brands
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Trusted by Industry
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
+              Leaders Nationwide
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            From government institutions to major corporations, Pakistan's leading organizations choose us for their tyre solutions
+          </p>
+        </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          {brands.map((brand, index) => (
-            <div key={index} className="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
-              <div className="text-center">
-                {brand.name === "Pakistan State Oil" && (
-                  <div className="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-sm">PSO</span>
-                  </div>
-                )}
-                {brand.name === "Pakistan Air Force" && (
-                  <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <div className="text-white text-xs font-bold">
-                      <div>⭐</div>
-                      <div>PAF</div>
-                    </div>
-                  </div>
-                )}
-                {brand.name === "Development Company" && (
-                  <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-xs">DEV</span>
-                  </div>
-                )}
-                {brand.name === "NHA" && (
-                  <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-sm">NHA</span>
-                  </div>
-                )}
-                {brand.name === "Lucky Cement" && (
-                  <div className="w-20 h-20 bg-red-600 border-4 border-gray-800 flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-xs">LUCKY</span>
-                  </div>
-                )}
-                {brand.name === "Fauji Cement" && (
-                  <div className="w-20 h-20 bg-green-700 flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-xs">FAUJI</span>
-                  </div>
-                )}
-                {brand.name === "Habib Construction" && (
-                  <div className="w-20 h-20 bg-orange-600 rounded-lg flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-xs">HABIB</span>
-                  </div>
-                )}
-                {brand.name === "Descon" && (
-                  <div className="w-20 h-20 bg-red-600 flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-sm">DESCON</span>
-                  </div>
-                )}
-                {brand.name === "Al Bayrak" && (
-                  <div className="w-20 h-20 bg-red-500 flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-xs">BAYRAK</span>
-                  </div>
-                )}
-                {brand.name === "CGGC" && (
-                  <div className="w-20 h-20 bg-yellow-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold text-sm">CGGC</span>
-                  </div>
-                )}
-                <p className="text-xs text-gray-600 font-medium">{brand.name}</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {companies.map((company, index) => (
+            <div key={index} className="group">
+              <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+                <div className={`w-16 h-16 ${company.color} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <span className="text-white font-bold text-sm text-center leading-tight">
+                    {company.code}
+                  </span>
+                </div>
+                <h3 className="text-sm font-semibold text-gray-800 text-center leading-tight">
+                  {company.name}
+                </h3>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <div className="inline-flex items-center bg-white rounded-full px-8 py-4 shadow-lg">
+            <span className="text-2xl font-bold text-orange-500 mr-2">500+</span>
+            <span className="text-gray-700 font-medium">Companies Trust Our Services</span>
+          </div>
         </div>
       </div>
     </section>

@@ -2,88 +2,87 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { ExternalLink, Star } from 'lucide-react';
 
 const BrandShowcase = () => {
   const brands = [
     {
       name: "ADVANCE TYRES",
-      logo: "A TYRE ADVANCE",
-      color: "yellow",
-      description: "Advance Tyres, a brand under Guizhou Tyre Co., Ltd. (GTC Group), specializes in manufacturing a wide range of tyres for applications such as trucks, buses, agriculture, forestry, mining, and industrial use. Established in 1958, the company operates globally with production facilities in China and Vietnam, offering products under the brands Advance and Samson. Committed to innovation, quality, and sustainability, it emphasizes collaboration and excellence to meet the demands of a competitive global market.",
-      buttonText: "Read More"
+      subtitle: "Premium Commercial Solutions",
+      description: "Leading manufacturer specializing in trucks, buses, agriculture, and industrial applications. Part of Guizhou Tyre Co., Ltd. with global operations since 1958.",
+      features: ["Commercial Grade", "Industrial Use", "Global Quality"],
+      color: "from-blue-600 to-cyan-500"
     },
     {
-      name: "MAGNUM-V TYRES", 
-      logo: "MAGNUM-V",
-      color: "red",
-      description: "Thailand, a leading natural rubber producer, excels in creating value-added products like tyres for all vehicles. Magnum-V (Vee Rubber Group) stands out as a top tyre manufacturer and exporter, offering a diverse range from go-kart to commercial tyres. Combining premium materials with cutting-edge technology, Magnum-V delivers exceptional quality for export and domestic markets. Malik Trading Co. proudly serves as the exclusive distributor of Magnum-V tyres in Pakistan, ensuring superior performance and reliability for diverse applications.",
-      buttonText: "Read More"
+      name: "MAGNUM-V",
+      subtitle: "Thai Excellence in Rubber",
+      description: "Thailand's premier tyre manufacturer offering comprehensive range from passenger to commercial vehicles. Combining premium materials with cutting-edge technology.",
+      features: ["Premium Materials", "Advanced Tech", "Export Quality"],
+      color: "from-red-600 to-pink-500"
     },
     {
-      name: "RUNWAY TYRES",
-      logo: "RUNWAY", 
-      color: "blue",
-      description: "Runway Tires, a flagship brand by Giti Tire, is recognized for its innovation, sustainability, and global presence in over 130 countries. Known for superior quality and performance, Runway Tires cater to diverse driving needs. Malik Trading Co. proudly represents Runway Tires in Pakistan, delivering premium products designed for safety, efficiency, and reliability.",
-      buttonText: "Read More"
+      name: "RUNWAY",
+      subtitle: "Innovation & Sustainability",
+      description: "Flagship brand by Giti Tire, recognized globally in 130+ countries for superior quality, innovation, and commitment to sustainable mobility solutions.",
+      features: ["Global Presence", "Eco-Friendly", "Safety First"],
+      color: "from-purple-600 to-indigo-500"
     }
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Our Premium
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
+              Brand Portfolio
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Partnering with world-renowned manufacturers to bring you the finest tyres for every application
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8">
           {brands.map((brand, index) => (
-            <Card key={index} className="bg-white hover:shadow-xl transition-shadow duration-300">
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-500 border-0 bg-white overflow-hidden">
               <CardContent className="p-0">
-                {/* Brand header with colored border */}
-                <div className={`h-32 relative border-4 ${
-                  brand.color === 'yellow' ? 'border-yellow-400 bg-gradient-to-br from-gray-100 to-gray-200' :
-                  brand.color === 'red' ? 'border-red-500 bg-gradient-to-br from-gray-100 to-gray-200' :
-                  'border-blue-500 bg-gradient-to-br from-gray-100 to-gray-200'
-                } flex items-center justify-center`}>
-                  <div className={`text-center ${
-                    brand.color === 'yellow' ? 'text-blue-800' :
-                    brand.color === 'red' ? 'text-red-600' :
-                    'text-blue-700'
-                  }`}>
-                    {brand.name === "ADVANCE TYRES" && (
-                      <div className="bg-gradient-to-r from-yellow-400 to-blue-600 text-white px-4 py-2 rounded">
-                        <div className="text-lg font-bold">A TYRE</div>
-                        <div className="text-sm">ADVANCE</div>
-                      </div>
-                    )}
-                    {brand.name === "MAGNUM-V TYRES" && (
-                      <div className="bg-red-600 text-white px-6 py-3 rounded-full">
-                        <div className="text-lg font-bold">MAGNUM-V</div>
-                      </div>
-                    )}
-                    {brand.name === "RUNWAY TYRES" && (
-                      <div className="text-blue-700">
-                        <div className="text-2xl font-bold">RUNWAY</div>
-                        <div className="w-16 h-1 bg-blue-500 mx-auto rounded"></div>
-                      </div>
-                    )}
+                {/* Brand header */}
+                <div className={`h-40 bg-gradient-to-br ${brand.color} relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-black/20"></div>
+                  <div className="relative z-10 p-6 h-full flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold text-white mb-2">{brand.name}</h3>
+                    <p className="text-white/90 text-sm">{brand.subtitle}</p>
                   </div>
                   
-                  {/* Tire images placeholder */}
-                  <div className="absolute bottom-2 right-2 flex space-x-1">
-                    <div className="w-8 h-8 bg-black rounded-full opacity-60"></div>
-                    <div className="w-8 h-8 bg-black rounded-full opacity-60"></div>
-                    <div className="w-8 h-8 bg-black rounded-full opacity-60"></div>
-                  </div>
+                  {/* Decorative elements */}
+                  <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/10 rounded-full"></div>
+                  <div className="absolute -top-4 -left-4 w-16 h-16 bg-white/10 rounded-full"></div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-lg font-bold text-center mb-4">{brand.name}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                <div className="p-6 space-y-6">
+                  <p className="text-gray-600 leading-relaxed">
                     {brand.description}
                   </p>
-                  <div className="text-center">
-                    <Button variant="link" className="text-red-600 hover:text-red-700 p-0">
-                      {brand.buttonText} →
-                    </Button>
+
+                  <div className="space-y-3">
+                    {brand.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <Star className="h-4 w-4 text-orange-400 fill-current" />
+                        <span className="text-sm text-gray-700 font-medium">{feature}</span>
+                      </div>
+                    ))}
                   </div>
+
+                  <Button 
+                    variant="outline" 
+                    className="w-full group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300"
+                  >
+                    Learn More
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Button>
                 </div>
               </CardContent>
             </Card>
